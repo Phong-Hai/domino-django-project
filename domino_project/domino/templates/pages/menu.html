@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="js/template.js" defer></script>
+    <script src="js/menu.js" defer></script>
+</head>
+<body style="margin: 0;">
+    <div id="preloader"></div>
+    <div class="menu">
+        <div class="container_menu">
+            <div class="container_menu_left">
+                <ul>
+                    <a href="index.html"><li><img src="image/domino_logo.png" width="65" height="65"></li></a>
+                    <a href="index.html"><li>Home</li></a>
+                    <a href="menu.html"><li>Menu</li></a>
+                    <a href="cart.html"><li>Order</li></a>
+                    <a href="contact.html"><li>Contact</li></a>
+                </ul>
+            </div>
+            <div class="container_menu_right">
+                <ul>
+                    <li><p id="numberItemInCart">0</p></li>
+                    <li><a href="cart.html"><img src="icon/cart.png" width="25" height="25"></a></li>
+                    <li><a href="account.html"><img src="icon/user.png" width="23" height="23"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="body_container">
+        <div class="menu_container">
+            <h1>Pizza</h1>
+            <div class="pizza">
+                <div class="pizza_menu">
+                    <div class="menu">
+                        <img src="image/pizza/cheese-pizza.jpg">
+                        <div class="info_bar">
+                            <p><b>Cheese Pizza</b><br>9.99$</p>
+                            <button class="add-to-cart" data-id="cheese-pizza" data-name="Cheese Pizza" data-price="9.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/pizza/hawaiian-pizza.jpg">
+                        <div class="info_bar">
+                            <p><b>Hawaiian Pizza</b><br>15.99$</p>
+                            <button class="add-to-cart" data-id="hawaiian-pizza" data-name="Hawaiian Pizza" data-price="15.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/pizza/pizza-wooden-tray.jpg">
+                        <div class="info_bar">
+                            <p><b>Classic Ham Pizza</b><br>16.99$</p>
+                            <button class="add-to-cart" data-id="classic-ham-pizza" data-name="Classic Ham Pizza" data-price="16.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/pizza/seafood-pizza.jpg">
+                        <div class="info_bar">
+                            <p><b>Super Seafood Pizza</b><br>19.99$</p>
+                            <button class="add-to-cart" data-id="super-seafood-pizza" data-name="Super Seafood Pizza" data-price="19.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1>Side Dishes</h1>
+            <div class="pizza">
+                <div class="pizza_menu">
+                    <div class="menu">
+                        <img src="image/side dishes/fried_chicken_thigh.jpg">
+                        <div class="info_bar">
+                            <p><b>Fried Chicken Thigh</b><br>0.99$ / 1pcs</p>
+                            <button class="add-to-cart" data-id="fried-chicken-thigh" data-name="Fried Chicken Thigh" data-price="0.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/side dishes/fried_chicken_wing.jpg">
+                        <div class="info_bar">
+                            <p><b>Fried Chicken Wing</b><br>0.99$ / 1pcs</p>
+                            <button class="add-to-cart" data-id="fried-chicken-wing" data-name="Fried Chicken Wing" data-price="0.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/side dishes/nugget.png">
+                        <div class="info_bar">
+                            <p><b>Chicken Nugget</b><br>2.99$ / 6pcs</p>
+                            <button class="add-to-cart" data-id="chicken-nugget" data-name="Chicken Nugget" data-price="2.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/side dishes/korean_chicken_thigh.png">
+                        <div class="info_bar">
+                            <p><b>Korean Fried Chicken</b><br>1.49$ / 1pcs</p>
+                            <button class="add-to-cart" data-id="korean-fried-chicken" data-name="Korean Fried Chicken" data-price="1.49">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/side dishes/garlic_bread.jpg">
+                        <div class="info_bar">
+                            <p><b>Garlic Bread</b><br>1.99$ / plate</p>
+                            <button class="add-to-cart" data-id="garlic-bread" data-name="Garlic Bread" data-price="1.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/drink/dasani.png">
+                        <div class="info_bar">
+                            <p><b>Dasani</b><br>0.59$ / 500ml</p>
+                            <button class="add-to-cart" data-id="dasani" data-name="Dasani" data-price="0.59">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/drink/fanta.png">
+                        <div class="info_bar">
+                            <p><b>Fanta</b><br>0.99$ / 500ml</p>
+                            <button class="add-to-cart" data-id="fanta" data-name="Fanta" data-price="0.99">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu">
+                        <img src="image/drink/pepsi.png">
+                        <div class="info_bar">
+                            <p><b>Pepsi Cola</b><br>0.99$ / 500ml</p>
+                            <button class="add-to-cart" data-id="pepsi-cola" data-name="Pepsi Cola" data-price="0.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background-color: #0b648f; margin-top: 50px;">
+        <div class="footer_table">
+            <table>
+                <tr>
+                    <td>
+                        <div class="footer_left">
+                            <p>Our Social media:</p>
+                            <ul>
+                                <li><a href="https://www.facebook.com/DominosPizzaCambodia/" target="_blank"><img src="icon/facebook.png"></a></li>
+                                <li><a href="https://www.instagram.com/dominos/?hl=en" target="_blank"><img src="icon/instagram.png"></a></li>
+                                <li><a href="https://www.tiktok.com/@dominos.pizza.cam" target="_blank"><img src="icon/tiktok.png"></a></li>
+                                <li><a href="https://www.youtube.com/@dominos" target="_blank"><img src="icon/youtube.png"></a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td><div class="footer_right"></div></td>
+                </tr>
+            </table>
+        </div>
+        <div class="description">
+            <p><br><br>Any Delivery Charge is not a tip paid to your driver.<br>Please reward your driver for awesomeness. Our drivers carry less than 10$. Minimum purchase required for delivery. Payment is strictly Cash On Delivery.<br><br>Operating hours: 10:00 AM - 10:00 PM. Delivery service from 10:00 AM - 9:30 PM.<br><br>Domino's Pizza Cambodia reserves the right to modify this policy. Major changes will be posted on our homepage.<br><br>Our Guarantee: If you're not satisfied with your Domino's Pizza experience, we'll make it right or refund your money.</p>
+        </div>
+    </footer>
+</body>
+</html>
