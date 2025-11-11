@@ -60,7 +60,7 @@
       "product_name": "Margherita",
       "price": 9.99,
       "description": "Classic pizza with tomato sauce, mozzarella, and fresh basil.",
-      "image": "image/pizza/margherita.png",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
       "category": 1,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -73,7 +73,7 @@
       "product_name": "Pepperoni",
       "price": 11.99,
       "description": "Tomato sauce, mozzarella, and double pepperoni.",
-      "image": "image/pizza/pepperoni.png",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -86,7 +86,7 @@
       "product_name": "Veg Extravaganza",
       "price": 10.99,
       "description": "Tomato sauce, mozzarella, mushrooms, bell peppers, onions, and olives.",
-      "image": "image/pizza/veg_extravaganza.png",
+      "image": "image/pizza/hawaiian-pizza.jpg",
       "category": 2,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -99,7 +99,7 @@
       "product_name": "Philly Cheese Steak Pizza",
       "price": 12.99,
       "description": "Steak, mozzarella, onions, peppers, and mushrooms with a creamy cheese sauce.",
-      "image": "image/pizza/philly_cheese_steak.png",
+      "image": "image/pizza/hawaiian-pizza.jpg",
       "category": 4,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -112,7 +112,7 @@
       "product_name": "Brooklyn Style Pizza",
       "price": 11.49,
       "description": "Thin crust with tomato sauce, mozzarella, pepperoni, and provolone, foldable New York style.",
-      "image": "image/pizza/brooklyn_style.png",
+      "image": "image/pizza/hawaiian-pizza.jpg",
       "category": 4,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -125,7 +125,7 @@
       "product_name": "Non-Veg Supreme",
       "price": 12.49,
       "description": "Tomato sauce, mozzarella, pepperoni, sausage, ham, and bell peppers.",
-      "image": "image/pizza/non_veg_supreme.png",
+      "image": "image/pizza/hawaiian-pizza.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -138,7 +138,7 @@
       "product_name": "Chicken Fiesta",
       "price": 11.99,
       "description": "Grilled chicken, onions, green peppers, and mozzarella with tomato sauce.",
-      "image": "image/pizza/chicken_fiesta.png",
+      "image": "image/pizza/hawaiian-pizza.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -151,7 +151,7 @@
       "product_name": "Indi Chicken Tikka",
       "price": 12.99,
       "description": "Spicy tikka sauce, chicken tikka, onions, and mozzarella.",
-      "image": "image/pizza/chicken_tikka.png",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
       "category": 4,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -164,7 +164,7 @@
       "product_name": "Cheese Burst Margherita",
       "price": 10.99,
       "description": "Cheese burst crust with tomato sauce and extra mozzarella.",
-      "image": "image/pizza/cheese_burst_margherita.png",
+      "image": "image/pizza/cheese-pizza.jpg",
       "category": 1,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -177,7 +177,7 @@
       "product_name": "Hawaiian",
       "price": 11.49,
       "description": "Tomato sauce, mozzarella, ham, and pineapple.",
-      "image": "image/pizza/hawaiian-pizza.png",
+      "image": "image/pizza/hawaiian-pizza.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -190,7 +190,7 @@
       "product_name": "Parmesan Stuffed Crust Pizza",
       "price": 13.49,
       "description": "Buttery-flavored crust stuffed with parmesan and mozzarella, topped with pepperoni.",
-      "image": "image/pizza/parmesan_stuffed_crust.png",
+      "image": "image/pizza/seafood-pizza.jpg",
       "category": 4,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -203,7 +203,7 @@
       "product_name": "Chicken Dominator",
       "price": 12.49,
       "description": "Tomato sauce, mozzarella, grilled chicken, and pepper barbecue chicken.",
-      "image": "image/pizza/chicken-dominator.png",
+      "image": "image/side_dishes/korean_chicken_thigh.png",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -216,7 +216,7 @@
       "product_name": "Rachel’s Sweet Buffalo",
       "price": 12.99,
       "description": "New York style crust with tomato sauce, pepperoni, bacon, pineapple, and hot buffalo sauce.",
-      "image": "image/pizza/sweet_buffalo.png",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
       "category": 4,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -229,7 +229,7 @@
       "product_name": "Hannah’s Alfredo Veggie Melt",
       "price": 11.49,
       "description": "Thin crust with alfredo sauce, spinach, feta, green peppers, onions, and mushrooms.",
-      "image": "image/pizza/alfredo_veggie_melt.png",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
       "category": 2,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -242,7 +242,7 @@
       "product_name": "MeatZZa",
       "price": 12.99,
       "description": "Tomato sauce, mozzarella, pepperoni, sausage, ham, and beef.",
-      "image": "image/pizza/meatzza.png",
+      "image": "image/pizza/seafood-pizza.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -255,7 +255,7 @@
       "product_name": "Chicken Sausage",
       "price": 11.99,
       "description": "Tomato sauce, mozzarella, and chicken sausage.",
-      "image": "image/pizza/chicken_sausage.png",
+      "image": "image/side_dishes/fried_chicken_thigh.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -268,7 +268,7 @@
       "product_name": "Buffalo Chicken Pizza",
       "price": 12.49,
       "description": "Buffalo sauce, mozzarella, grilled chicken, and onions.",
-      "image": "image/pizza/buffalo_chicken.png",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
       "category": 4,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -281,7 +281,7 @@
       "product_name": "Pepper Barbecue & Onion",
       "price": 11.49,
       "description": "Barbecue sauce, mozzarella, pepper barbecue chicken, and onions.",
-      "image": "image/pizza/pepper_barbecue_onion.png",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
       "category": 3,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -294,7 +294,7 @@
       "product_name": "Cheese & Corn",
       "price": 10.49,
       "description": "Tomato sauce, mozzarella, sweet corn, and extra cheese.",
-      "image": "image/pizza/cheese_corn.png",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
       "category": 2,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -307,7 +307,7 @@
       "product_name": "Fried Chicken Thigh",
       "price": 0.99,
       "description": "Crispy fried chicken thigh, perfect as a side.",
-      "image": "image/side_dishes/fried_chicken_thigh.png",
+      "image": "image/side_dishes/fried_chicken_thigh.jpg",
       "category": 5,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -320,7 +320,7 @@
       "product_name": "Fried Chicken Wing",
       "price": 0.99,
       "description": "Juicy fried chicken wing with a crispy coating.",
-      "image": "image/side_dishes/fried_chicken_wing.png",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
       "category": 5,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
@@ -359,7 +359,7 @@
       "product_name": "Garlic Bread",
       "price": 1.99,
       "description": "Warm garlic bread with a buttery spread.",
-      "image": "image/side_dishes/garlic_bread.png",
+      "image": "image/side_dishes/garlic_bread.jpg",
       "category": 5,
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
