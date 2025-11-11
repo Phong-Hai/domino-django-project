@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+    <h1>Menu</h1>
+
+    <div class="pizza_menu">
+        {% for product in products %}
+            <div class="menu">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% endif %}
+                <div class="info_bar">
+                    <p><b>{{ product.name }}</b><br>${{ product.price }}</p>
+                    <a href="{% url 'add_to_cart' product.id %}">
+                        <button>Add to Cart</button>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'cart' %}">Go to Cart</a>
+</body>
+</html>
