@@ -1,0 +1,104 @@
+{% extends 'admin/dashboard.html' %}
+{% load static %}
+{% block content %}
+    <section class="content">
+        <!-- THIS DISPLAYS THE MESSAGE -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <!-- Small boxes (Stat box) -->
+        <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-clipboard"></i>
+              <h3 class="box-title">User List</h3>  <!-- Changed -->
+            </div>
+
+            <div class="box-body">
+                <div style="overflow-x: auto;">
+                    <table class="table table-striped" style="table-layout: fixed; width: 100%;">
+                        <thead>
+                          <tr>
+                            <th style="width: 8%;">ID</th>
+                            <th style="width: 15%;">Firstname</th>
+                            <th style="width: 15%;">Lastname</th>
+                            <th style="width: 15%;">Username</th>
+                            <th style="width: 15%;">Password</th>
+                            <th style="width: 10%;">Gender</th>
+                            <th style="width: 10%;">Address</th>
+                            <th style="width: 10%;">Role</th>
+                            <th style="width: 20%;">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for user in users %}  <!-- Changed from students -->
+                              <tr>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.id }}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.first_name }}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.last_name}}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.username}}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.password}}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.gender }}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.address }}</td>
+                                <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ user.role }}</td>
+                                <td>
+                                    <div style="display: flex; gap: 2px;">
+                                        <a href="/manager/users/edit/{{ user.id }}" class="btn btn-primary btn-sm">  <!-- Updated URL -->
+                                            <span class="glyphicon glyphicon-pencil"></span> Edit
+                                        </a>
+                                        <a class="btn btn-success btn-sm">
+                                            <span class="glyphicon glyphicon-eye-open"></span> View
+                                        </a>
+                                        <a href="/manager/users/delete/{{ user.id }}" class="btn btn-danger btn-sm" methods="get">  <!-- Updated URL -->
+                                            <span class="glyphicon glyphicon-trash"></span> Delete
+                                        </a>
+                                    </div>
+                                </td>
+                              </tr>
+                            {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+
+            <div class="box-footer clearfix no-border">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p style="margin: 0;">Item Count: {{count_item}}</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <p style="margin: 0;">Page {{ users.number }} of {{ users.paginator.num_pages }}</p>  <!-- Changed -->
+                        <ul class="pagination" style="margin: 0; display: flex; align-items: center;">
+                            {% if users.has_previous %}  <!-- Changed -->
+                                <li><a href="?page=1" style="color:white;background-color:green">&laquo; first</a></li>
+                                <li><a href="?page={{ users.previous_page_number }}" style="color:white;background-color:green">previous</a> </li>  <!-- Changed -->
+                            {% else %}
+                                <li><a style="color:white;background-color:gray">first</a> </li>
+                            {% endif %}
+
+                            {% for i in users.paginator.page_range %}  <!-- Changed -->
+                                {% if users.number == i %}  <!-- Changed -->
+                                    <li><a href="#" style="color:white;background-color: blue;">{{ i }}</a></li>
+                                {% else %}
+                                    <li><a href="?page={{ i }}" style="color:black;">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if users.has_next %}  <!-- Changed -->
+                                <li><a href="?page={{ users.next_page_number }}" style="color:white;background-color:green">next</a></li>  <!-- Changed -->
+                                <li><a href="?page={{ users.paginator.num_pages }}" style="color:white;background-color:green">last &raquo;</a></li>  <!-- Changed -->
+                            {% else %}
+                                <li><a style="color:white;background-color:gray">last</a> </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <a href="/manager/users/show" class="btn btn-default pull-right text-bold text-blue" role="button" style="margin: 0;">  <!-- Updated URL -->
+                        <icon class="fa fa-plus"></icon> Add User  <!-- Changed -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

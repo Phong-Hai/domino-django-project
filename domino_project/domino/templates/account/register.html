@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <script src="{% static 'js/account_validation.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="{% url 'register' %}" method="post" id="registrationForm">
+            {% csrf_token %}  <!-- CRITICAL: Django security -->
+
+            <img id="domino_logo" src="{% static 'image/domino_logo.png' %}" alt="Domino's Logo">
+            <p>All user information will be collected by Domino's Pizza <br>All rights will be legally reserved</p>
+            <hr>
+            <h3><b>Registration</b></h3>
+            <hr>
+
+            <!-- Display Django messages -->
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="alert {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <br>
+
+            <div class="row">
+                <input type="email"
+                       name="email"
+                       id="txtEmail"
+                       placeholder="Email *"
+                       value="{{ request.POST.email }}"
+                       required>
+            </div>
+
+            <div class="row">
+                <input type="text"
+                       name="first_name"
+                       id="txtName"
+                       placeholder="Name *"
+                       value="{{ request.POST.first_name }}"
+                       required>
+            </div>
+
+            <div class="row">
+                <input type="tel"
+                       name="phone"
+                       id="txtPhoneNum"
+                       placeholder="Phone Number *"
+                       value="{{ request.POST.phone }}"
+                       required>
+            </div>
+
+            <div class="row" style="display: flex; gap: 20px;">
+                <label>
+                    <input type="radio" name="gender" value="Male"
+                           {% if request.POST.gender == 'Male' %}checked{% endif %}> Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Female"
+                           {% if request.POST.gender == 'Female' or not request.POST.gender %}checked{% endif %}> Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Other"
+                           {% if request.POST.gender == 'Other' %}checked{% endif %}> Not given
+                </label>
+            </div>
+
+            <div class="row">
+                <input type="password"
+                       name="password"
+                       id="txtPassword"
+                       placeholder="Password *"
+                       required>
+            </div>
+
+            <div class="row">
+                <input type="password"
+                       name="password2"
+                       id="txtConfirm"
+                       placeholder="Confirm your password *"
+                       required>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+
+            <!-- THIS MUST BE type="submit" -->
+            <input type="submit"  value="SignUp" id="buttonSubmit" class="submit-btn">
+        </form>
+    </div>
+</body>
+</html>
