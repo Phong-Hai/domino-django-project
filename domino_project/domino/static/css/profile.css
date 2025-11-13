@@ -1,0 +1,18 @@
+/* Basic layout and simple Domino-like style */
+:root{--accent:#e31837;--muted:#666}
+body{font-family:Inter, Arial, sans-serif;background:#f7f7f8;color:#222;margin:0;padding:30px}
+.container{max-width:900px;margin:0 auto}
+.card{background:#fff;border-radius:8px;padding:18px;margin-bottom:16px;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+h1{font-size:28px;margin-bottom:12px}
+h2{font-size:16px;margin:0 0 8px}
+label{display:block;margin-top:8px}
+input[type=text], input[type=email], textarea, input[type=file], select{width:100%;padding:8px;border:1px solid #ddd;border-radius:6px}
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:10px}
+.actions{display:flex;gap:8px}
+.btn{background:var(--accent);color:#fff;padding:10px 14px;border:none;border-radius:8px;cursor:pointer}
+.messages{list-style:none;padding:0}
+.messages li{padding:8px;border-radius:6px;margin-bottom:8px}
+.messages li.success{background:#e6ffef;color:#065f46}
+.messages li.error{background:#ffeaea;color:#7a1b1b}
+.password-card input{width:48%}
+@media(max-width:640px){.password-card input{width:100%}}

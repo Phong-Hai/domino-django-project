@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Domino's Pizza</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <form action="" method="post" id="loginForm">
+        {% csrf_token %}
+        <img id="domino_logo" src="{% static 'image/domino_logo.png' %}" alt="Domino Logo">
+        <p>Welcome back to Domino’s Pizza! 🍕<br>Sign in to manage your profile and orders.</p>
+        <hr>
+        <h3><b>Login</b></h3>
+        <hr>
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <div class="row">
+            <input type="text" name="username" id="username" placeholder="Username or Email *" required>
+        </div>
+        <div class="row">
+            <input type="password" name="password" id="password" placeholder="Password *" required>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <input type="submit" value="Login" id="buttonLogin">
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+    </form>
+</body>
+</html>
+<script src="{% static 'js/login_validation.js' %}"></script>

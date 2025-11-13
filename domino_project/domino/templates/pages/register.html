@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+</head>
+<body>
+    <form action="" method="post" id="registrationForm">
+        <img id="domino_logo" src="{% static 'image/domino_logo.png' %}">
+        <p>All user information will be collected by Domino's Pizza <br>All right will be legally reserved</p>
+        <hr>
+        <h3><b>Registration</b></h3>
+        <hr>
+        <!-- <div class="row" style="display: flex;">
+            <label for="rdType">
+                <input type="radio" name="rdType" id="rdType" checked> &nbsp;Personal
+            </label>
+            <label for="rdType">
+                <input type="radio" name="rdType" id="rdType"> &nbsp;Company
+            </label>
+        </div> -->
+        <br>
+        <div class="row">
+            <input type="text" autocomplete="off" name="txtEmail" id="txtEmail" placeholder="Email *">
+        </div>
+        <div class="row">
+
+            <input type="text" autocomplete="off" name="txtName" id="txtName" placeholder="Name *">
+        </div>
+        <div class="row">
+
+            <input type="number" autocomplete="off" name="txtPhoneNum" id="txtPhoneNum" placeholder="Phone Number *">
+        </div>
+        <div class="row" style="display: flex;">
+            <label for="rdGender">
+                <input type="radio" name="rdGender" id="rdGender"> &nbsp;Male
+            </label>
+            <label for="rdGender">
+                <input type="radio" checked name="rdGender" id="rdGender"> &nbsp;Female
+            </label>
+            <label for="rdGender">
+                <input type="radio" checked name="rdGender" id="rdGender"> &nbsp;Not given
+            </label>
+        </div>
+        <div class="row">
+
+            <input type="password" name="txtPassword" id="txtPassword" placeholder="Password *"
+             >
+        </div>
+        <div class="row">
+
+            <input type="password" name="txtConfirm" id="txtConfirm" placeholder="Confirm your password *">
+        </div>
+        <br>
+        <hr>
+        <br>
+        <input type="button" value="Sign Up" name="buttonSubmit" id="buttonSubmit">
+    </form>
+</body>
+</html>
+<script src="{% static 'js/account_validation.js' %}"></script>

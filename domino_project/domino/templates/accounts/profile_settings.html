@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Profile Settings — Domino Pizza</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<script defer src="{% static 'js/profile.js' %}"></script>
+<body>
+<main class="container">
+<h1>Profile Settings</h1>
+
+
+{% if messages %}
+<ul class="messages">
+{% for message in messages %}
+<li class="{{ message.tags }}">{{ message }}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+
+<form id="profile-form" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<section class="card">
+<h2>Basic</h2>
+{{ user_form.first_name.label_tag }}
+{{ user_form.first_name }}
+{{ user_form.last_name.label_tag }}
+{{ user_form.last_name }}
+{{ user_form.email.label_tag }}
+{{ user_form.email }}
+</section>
+
+
+<section class="card">
+<h2>Contact & Preferences</h2>
+{{ profile_form.phone.label_tag }}
+{{ profile_form.phone }}
+{{ profile_form.address.label_tag }}
+{{ profile_form.address }}
+{{ profile_form.preferred_store.label_tag }}
+{{ profile_form.preferred_store }}
+<label class="checkbox">{{ profile_form.subscribe_promos }} Subscribe to promotions</label>
+</section>
+
+
+<section class="card">
+<h2>Profile Photo</h2>
+{% if user.profile.profile_image %}
+<img id="preview" src="{{ user.profile.profile_image.url }}" alt="profile" class="avatar">
+{% else %}
+<img id="preview" src="/static/default-avatar.png" alt="profile" class="avatar">
+{% endif %}
+{{ profile_form.profile_image }}
+</section>
+
+
+<div class="actions">
+<button type="submit" class="btn">Save changes</button>
+</div>
+</form>
+
+
+<section class="card password-card">
+<h2>Change password</h2>
+{#<form id="password-form" method="post" action="{% url 'accounts:change_password' %}">#}
+{#{% csrf_token %}#}
+{#{{ password_form.old_password.label_tag }}#}
+{#{{ password_form.old_password }}#}
+{#{{ password_form.new_password1.label_tag }}#}
+{#{{ password_form.new_password1 }}#}
+{#{{ password_form.new_password2.label_tag }}#}
+{#{{ password_form.new_password2 }}#}
+{#<div class="actions">#}
+{#<button type="submit" class="btn">Change password</button>#}
+{#</div>#}
+{#</form>#}
+</section>
+</main>
+</body>
+</html>
