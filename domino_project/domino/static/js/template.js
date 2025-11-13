@@ -1,4 +1,7 @@
-let cartInitialized = false;
+// Prevent redeclaration (safe global setup)
+if (typeof cartInitialized === 'undefined') {
+    var cartInitialized = false;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     if (cartInitialized) return;

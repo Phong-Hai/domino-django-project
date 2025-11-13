@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domino | Invoice</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f5f5f5; color: #333; line-height: 1.6; padding: 20px; }
+        .invoice-container { max-width: 800px; margin: 0 auto; background-color: white; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 40px; border-radius: 5px; }
+        .company-name { font-size: 24px; font-weight: bold; color: #2c3e50; border-bottom: 2px solid #3498db; margin-bottom: 20px; padding-bottom: 10px; }
+        .greeting { margin-bottom: 20px; font-size: 16px; }
+        .item-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .item-table th { background-color: #f8f9fa; text-align: left; padding: 12px 15px; border-bottom: 1px solid #ddd; font-weight: 600; }
+        .item-table td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+        .item-table tr:last-child td { border-bottom: none; }
+        .total-section { margin-top: 20px; text-align: right; font-weight: bold; font-size: 18px; }
+        .divider { height: 1px; background-color: #ddd; margin: 30px 0; }
+        .info-section { display: flex; justify-content: space-between; flex-wrap: wrap; }
+        .billing-info, .payment-info { width: 48%; margin-bottom: 20px; }
+        .section-title { font-weight: bold; margin-bottom: 10px; color: #2c3e50; font-size: 18px; }
+        .footer { text-align: center; margin-top: 40px; color: #7f8c8d; font-size: 14px; }
+
+    /* Button Container */
+    .print-btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+    }
+
+    .btn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background-color: #2980b9;
+    }
+
+    .btn-back {
+        background-color: #2ecc71;
+    }
+
+    .btn-back:hover {
+        background-color: #27ae60;
+    }
+
+    @media print {
+        .print-btn-container {
+            display: none !important;
+        }
+
+        body {
+            background: white;
+            -webkit-print-color-adjust: exact;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .billing-info, .payment-info {
+            width: 100%;
+        }
+
+        .invoice-container {
+            padding: 20px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="invoice-container">
+    <div class="company-name">My Shop Invoice</div>
+
+    <div class="greeting">
+      Hello, <span id="customerName">Customer</span>.<br>
+      Thank you for your order.
+    </div>
+
+    <div>
+      <strong>Order #:</strong> <span id="orderNumber"></span><br>
+      <strong>Date:</strong> <span id="orderDate"></span>
+    </div><br>
+
+    <table class="item-table">
+      <thead>
+        <tr>
+          <th>Item Description</th>
+          <th>Item ID</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody id="invoiceItems"></tbody>
+      <tfoot>
+        <tr><td colspan="3">SUBTOTAL</td><td id="subtotal"></td></tr>
+        <tr><td colspan="3">TAX (10%)</td><td id="tax"></td></tr>
+        <tr><td colspan="3"><strong>TOTAL</strong></td><td id="grandTotal"></td></tr>
+      </tfoot>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="info-section">
+      <div class="billing-info">
+        <div class="section-title">BILLING INFORMATION</div>
+        <p id="billingInfo"></p>
+      </div>
+
+      <div class="payment-info">
+        <div class="section-title">PAYMENT INFORMATION</div>
+        <p id="paymentMethod"></p>
+      </div>
+    </div>
+
+    <div class="footer">Thank you for your order!</div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="print-btn-container">
+    <a href="/menu/" class="btn btn-back">Back to Menu</a>
+    <button class="btn" id="printInvoice">Print Invoice</button>
+
+  </div>
+
+  <script src="{% static 'js/invoice.js' %}" defer></script>
+
+</body>
+</html>

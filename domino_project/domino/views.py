@@ -7,20 +7,24 @@ from . models import Product, Category
 def home(request):
     return render(request, "pages/index.html")
 
-
 # load all the product from database using category as separation
 # when clicked on menu
 def menu_menu(request):
     categories = Category.objects.prefetch_related('products').all()
     return render(request, 'pages/menu.html', {'categories': categories})
 
-
 def cart_menu(request):
     return render(request, "pages/cart.html")
 
-
 def contact_menu(request):
     return render(request, "pages/contact.html")
+
+def process_checkout(request):
+    return render(request, "pages/invoice.html")
+
+
+
+
 
 
 
