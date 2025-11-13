@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Settings — Domino Pizza</title>
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <script defer src="{% static 'js/profile.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+
+<!------------------- MENU ------------------->
+<div class="menu">
+    <div class="container_menu">
+        <div class="container_menu_left">
+            <ul>
+                <a href="{% url '/' %}"><li><img src="{% static 'image/domino_logo.png' %}" width="65" height="65"></li></a>
+                <a href="{% url '/' %}"><li>Home</li></a>
+                <a href="{% url 'menu' %}"><li>Menu</li></a>
+                <a href="{% url 'carts' %}"><li>Order</li></a>
+                <a href="{% url 'contacts' %}"><li>Contact</li></a>
+            </ul>
+        </div>
+        <div class="container_menu_right">
+            <ul>
+                <li><p id="numberItemInCart">0</p></li>
+                <li><a href="{% url 'carts' %}"><img src="{% static 'icon/cart.png' %}" width="25px" height="25px"></a></li>
+                <li><a href="{% url 'login' %}"><img src="{% static 'icon/user.png' %}" width="23px" height="23px"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br/><br/><br/><br/><br/><br/>
+
+<!------------------- FORM ------------------->
+<div class="profile-layout">
+    <!-- Left Sidebar Menu -->
+    <aside class="sidebar-menu">
+        <div style="text-align: center; font-size:25px; font-weight: bold;">
+            <a>
+                Setting
+            </a>
+        </div>
+        <br/>
+        <div class="admin-dashboard-btn-wrapper">
+            <a href="{% url 'profile_settings' %}" class="action-btn">
+                Edit Profile
+            </a>
+        </div>
+        {% if user.role == 'admin' %}
+        <div class="admin-dashboard-btn-wrapper">
+            <a href="{% url 'admin_dashboard' %}" class="action-btn">
+                Admin Dashboard
+            </a>
+        </div>
+        {% endif %}
+        <div style="margin-top: 200%;"></div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="container profile-container">
+        <header class="profile-header">
+            <h1 class="profile-title">Edit profile</h1>
+            <div class="avatar-wrapper">
+                {% if form.instance.image %}
+                <img id="preview" src="{{ form.instance.image.url }}" alt="Profile" class="avatar">
+                {% else %}
+                <img id="preview" src="{% static 'image/default-avatar.png' %}" alt="Profile" class="avatar">
+                {% endif %}
+                <label for="id_image" class="avatar-label">Change</label>
+                <br/> <br/>
+            </div>
+        </header>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data" class="profile-form">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name</label>
+                    {{ form.first_name }}
+                    <span class="check-icon"></span>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    {{ form.last_name }}
+                    <span class="check-icon"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group full">
+                    <label>Email</label>
+                    {{ form.email }}
+                    <span class="check-icon"></span>
+                </div>
+            </div>
+            <!-- Address -->
+            <div class="form-row">
+                <div class="form-group full">
+                    <label>Address</label>
+                    {{ form.address }}
+                    <span class="check-icon"></span>
+                </div>
+            </div>
+            <!-- Phone / City -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    {{ form.phone }}
+                    <span class="check-icon"></span>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    {{ form.preferred_store }}
+                    <span class="check-icon"></span>
+                </div>
+            </div>
+            <!-- Image (hidden) -->
+            <div class="form-actions">
+                <button type="button" class="btn btn-cancel" onclick="window.history.back()">Cancel</button>
+                <button type="submit" class="btn btn-save">Save</button>
+            </div>
+        </form>
+        <div class="logout-wrapper">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-logout">Log Out</button>
+            </form>
+        </div>
+    </main>
+</div>
+</body>
+</html>

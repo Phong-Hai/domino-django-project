@@ -1,0 +1,25 @@
+{% extends 'admin/dashboard.html' %}
+{% load static %}
+{% block content %}
+    <section class="content">
+      <div class="box box-primary">
+        <div class="box-header">
+          <i class="ion ion-clipboard"></i>
+          <h3 class="box-title">Update Category</h3>
+        </div>
+        <div class="box-body">
+            <form action="/manager/categories/update/{{ category.id }}/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>Category Name:</label>
+                    <input type="text" class="form-control" name="name" value="{{ category.name }}">
+                </div>
+                <a href="/manager/categories/" class="btn btn-danger" role="button">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Back
+                </a>
+                <button type="submit" class="btn btn-success">Update</button>
+            </form>
+        </div>
+      </div>
+    </section>
+{% endblock content %}

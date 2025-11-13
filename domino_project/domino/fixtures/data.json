@@ -1,0 +1,441 @@
+[
+  {
+    "model": "domino.Category",
+    "pk": 1,
+    "fields": {
+      "category_name": "Bestsellers",
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Category",
+    "pk": 2,
+    "fields": {
+      "category_name": "Vegetarian",
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Category",
+    "pk": 3,
+    "fields": {
+      "category_name": "Meat Lovers",
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Category",
+    "pk": 4,
+    "fields": {
+      "category_name": "Specialty Pizzas",
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Category",
+    "pk": 5,
+    "fields": {
+      "category_name": "Sides",
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Category",
+    "pk": 6,
+    "fields": {
+      "category_name": "Drinks",
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 1,
+    "fields": {
+      "product_name": "Margherita",
+      "price": 9.99,
+      "description": "Classic pizza with tomato sauce, mozzarella, and fresh basil.",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
+      "category": 1,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 2,
+    "fields": {
+      "product_name": "Pepperoni",
+      "price": 11.99,
+      "description": "Tomato sauce, mozzarella, and double pepperoni.",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 3,
+    "fields": {
+      "product_name": "Veg Extravaganza",
+      "price": 10.99,
+      "description": "Tomato sauce, mozzarella, mushrooms, bell peppers, onions, and olives.",
+      "image": "image/pizza/hawaiian-pizza.jpg",
+      "category": 2,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 4,
+    "fields": {
+      "product_name": "Philly Cheese Steak Pizza",
+      "price": 12.99,
+      "description": "Steak, mozzarella, onions, peppers, and mushrooms with a creamy cheese sauce.",
+      "image": "image/pizza/hawaiian-pizza.jpg",
+      "category": 4,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 5,
+    "fields": {
+      "product_name": "Brooklyn Style Pizza",
+      "price": 11.49,
+      "description": "Thin crust with tomato sauce, mozzarella, pepperoni, and provolone, foldable New York style.",
+      "image": "image/pizza/hawaiian-pizza.jpg",
+      "category": 4,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 6,
+    "fields": {
+      "product_name": "Non-Veg Supreme",
+      "price": 12.49,
+      "description": "Tomato sauce, mozzarella, pepperoni, sausage, ham, and bell peppers.",
+      "image": "image/pizza/hawaiian-pizza.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 7,
+    "fields": {
+      "product_name": "Chicken Fiesta",
+      "price": 11.99,
+      "description": "Grilled chicken, onions, green peppers, and mozzarella with tomato sauce.",
+      "image": "image/pizza/hawaiian-pizza.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 8,
+    "fields": {
+      "product_name": "Indi Chicken Tikka",
+      "price": 12.99,
+      "description": "Spicy tikka sauce, chicken tikka, onions, and mozzarella.",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
+      "category": 4,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 9,
+    "fields": {
+      "product_name": "Cheese Burst Margherita",
+      "price": 10.99,
+      "description": "Cheese burst crust with tomato sauce and extra mozzarella.",
+      "image": "image/pizza/cheese-pizza.jpg",
+      "category": 1,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 10,
+    "fields": {
+      "product_name": "Hawaiian",
+      "price": 11.49,
+      "description": "Tomato sauce, mozzarella, ham, and pineapple.",
+      "image": "image/pizza/hawaiian-pizza.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 11,
+    "fields": {
+      "product_name": "Parmesan Stuffed Crust Pizza",
+      "price": 13.49,
+      "description": "Buttery-flavored crust stuffed with parmesan and mozzarella, topped with pepperoni.",
+      "image": "image/pizza/seafood-pizza.jpg",
+      "category": 4,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 12,
+    "fields": {
+      "product_name": "Chicken Dominator",
+      "price": 12.49,
+      "description": "Tomato sauce, mozzarella, grilled chicken, and pepper barbecue chicken.",
+      "image": "image/side_dishes/korean_chicken_thigh.png",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 13,
+    "fields": {
+      "product_name": "Rachel’s Sweet Buffalo",
+      "price": 12.99,
+      "description": "New York style crust with tomato sauce, pepperoni, bacon, pineapple, and hot buffalo sauce.",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
+      "category": 4,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 14,
+    "fields": {
+      "product_name": "Hannah’s Alfredo Veggie Melt",
+      "price": 11.49,
+      "description": "Thin crust with alfredo sauce, spinach, feta, green peppers, onions, and mushrooms.",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
+      "category": 2,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 15,
+    "fields": {
+      "product_name": "MeatZZa",
+      "price": 12.99,
+      "description": "Tomato sauce, mozzarella, pepperoni, sausage, ham, and beef.",
+      "image": "image/pizza/seafood-pizza.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 16,
+    "fields": {
+      "product_name": "Chicken Sausage",
+      "price": 11.99,
+      "description": "Tomato sauce, mozzarella, and chicken sausage.",
+      "image": "image/side_dishes/fried_chicken_thigh.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 17,
+    "fields": {
+      "product_name": "Buffalo Chicken Pizza",
+      "price": 12.49,
+      "description": "Buffalo sauce, mozzarella, grilled chicken, and onions.",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
+      "category": 4,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 18,
+    "fields": {
+      "product_name": "Pepper Barbecue & Onion",
+      "price": 11.49,
+      "description": "Barbecue sauce, mozzarella, pepper barbecue chicken, and onions.",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
+      "category": 3,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 19,
+    "fields": {
+      "product_name": "Cheese & Corn",
+      "price": 10.49,
+      "description": "Tomato sauce, mozzarella, sweet corn, and extra cheese.",
+      "image": "image/pizza/pizza-wooden-tray.jpg",
+      "category": 2,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 20,
+    "fields": {
+      "product_name": "Fried Chicken Thigh",
+      "price": 0.99,
+      "description": "Crispy fried chicken thigh, perfect as a side.",
+      "image": "image/side_dishes/fried_chicken_thigh.jpg",
+      "category": 5,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 21,
+    "fields": {
+      "product_name": "Fried Chicken Wing",
+      "price": 0.99,
+      "description": "Juicy fried chicken wing with a crispy coating.",
+      "image": "image/side_dishes/fried_chicken_wing.jpg",
+      "category": 5,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 22,
+    "fields": {
+      "product_name": "Chicken Nugget",
+      "price": 2.99,
+      "description": "6 pieces of tender, crispy chicken nuggets.",
+      "image": "image/side_dishes/nugget.png",
+      "category": 5,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 23,
+    "fields": {
+      "product_name": "Korean Fried Chicken",
+      "price": 1.49,
+      "description": "Spicy Korean-style fried chicken thigh.",
+      "image": "image/side_dishes/korean_chicken_thigh.png",
+      "category": 5,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 24,
+    "fields": {
+      "product_name": "Garlic Bread",
+      "price": 1.99,
+      "description": "Warm garlic bread with a buttery spread.",
+      "image": "image/side_dishes/garlic_bread.jpg",
+      "category": 5,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 25,
+    "fields": {
+      "product_name": "Dasani",
+      "price": 0.59,
+      "description": "Refreshing purified water, 500ml bottle.",
+      "image": "image/drink/dasani.png",
+      "category": 6,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 26,
+    "fields": {
+      "product_name": "Fanta",
+      "price": 0.99,
+      "description": "Orange-flavored soda, 500ml bottle.",
+      "image": "image/drink/fanta.png",
+      "category": 6,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 27,
+    "fields": {
+      "product_name": "Pepsi Cola",
+      "price": 0.99,
+      "description": "Classic cola, 500ml bottle.",
+      "image": "image/drink/pepsi.png",
+      "category": 6,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 27,
+    "fields": {
+      "product_name": "Pepsi Cola",
+      "price": 0.99,
+      "description": "Classic cola, 500ml bottle.",
+      "image": "image/drink/pepsi.png",
+      "category": 6,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.User",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$600000$...",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@domino.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "role": "admin",
+      "gender": "male",
+      "phone": "",
+      "address": "",
+      "preferred_store": "",
+      "image": "image/drink/pepsi.png",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  }
+]
