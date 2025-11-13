@@ -11,14 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
         displayCartItems();
     }
 
-    // One-time setup: delegated click handler (never breaks)
     setupCartButtons();
 });
 
 function setupCartButtons() {
-    // Remove any old listener (safety)
     document.removeEventListener('click', handleAddToCartClick);
-    // Add the one and only listener
     document.addEventListener('click', handleAddToCartClick);
 }
 
@@ -189,7 +186,19 @@ async function checkout() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     if (cart.length === 0) {
-        alert('Cart is empty!');
+        alert('Your cart is empty!');
+        return;
+    }
+
+    const isLoggedIn = document.body.dataset.userAuthenticated === 'true';
+    // Check for login first before allowed to checkout
+    if (!isLoggedIn) {
+        localStorage.setItem('checkout_intent', 'true');
+
+        localStorage.setItem('redirect_after_login', window.location.pathname);
+
+        alert('Please log in to complete your order.');
+        window.location.href = '/login/';
         return;
     }
 
@@ -199,40 +208,31 @@ async function checkout() {
     checkoutBtn.disabled = true;
 
     try {
-        // Log the request for debugging
-        console.log('Sending cart data:', cart);
-
-        // Make sure this URL matches your Django URLs
-        const url = '/create-invoice/';  // Adjust this to match your URL pattern
-        console.log('Posting to:', url);
-
-        const response = await fetch(url, {
+        const response = await fetch('/create-invoice/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken'),
             },
-            body: JSON.stringify({
-                cart: cart
-            })
+            body: JSON.stringify({ cart })
         });
 
-        console.log('Response status:', response.status);
         const data = await response.json();
-        console.log('Response data:', data);
 
         if (response.ok) {
             generatePrintableOrder(data.invoice_id);
             localStorage.removeItem('cart');
+            localStorage.removeItem('checkout_intent');
             updateCartCount();
             alert(data.message || 'Order placed successfully!');
-            window.location.href = window.URLS.menu || '/';
+            window.location.href = '/';
         } else {
-            throw new Error(data.error || 'Failed to place order');
+            throw new Error(data.error || 'Checkout failed');
         }
-
     } catch (error) {
         console.error('Checkout error:', error);
-        alert('Failed to place order: ' + error.message);
+        alert('Error: ' + error.message);
+    } finally {
         checkoutBtn.textContent = originalText;
         checkoutBtn.disabled = false;
     }
