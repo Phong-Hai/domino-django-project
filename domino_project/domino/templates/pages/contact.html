@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 </head>
 <body style="margin: 0px 0px 0px 0px;">
     <div class="menu">
         <div class="container_menu">
             <div class="container_menu_left">
                 <ul>
-                    <a href="index.html"><li><img src="image/domino_logo.png" width="65px" height="65px"></li></a>
-                    <a href="index.html"><li>Home</li></a>
-                    <a href="menu.html"><li>Menu</li></a>
-                    <a href="cart.html"><li>Order</li></a>
-                    <a href="contact.html"><li>Contact</li></a>
-                </ul>             
+                    <a href="{% url '/' %}"><li><img src="{% static 'image/domino_logo.png' %}" width="65" height="65"></li></a>
+                    <a href="{% url '/' %}"><li>Home</li></a>
+                    <a href="{% url 'menu' %}"><li>Menu</li></a>
+                    <a href="{% url 'carts' %}"><li>Order</li></a>
+                    <a href="{% url 'contacts' %}"><li>Contact</li></a>
+                </ul>
             </div>
             <div class="container_menu_right">
                 <ul>
                     <li><p id="numberItemInCart">0</p></li>
-                    <li><a href="cart.html"><img src="icon/cart.png" width="25px" height="25px"></a></li>
-                    <li><a href="account.html"><img src="icon/user.png" width="23px" height="23px"></a></li>                      
+                    <li><a href="{% url 'carts' %}"><img src="{% static 'icon/cart.png' %}" width="25px" height="25px"></a></li>
+                    <li><a href="{% url 'login' %}"><img src="{% static 'icon/user.png' %}" width="23px" height="23px"></a></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="body_container">
-            <img src="image/phonenumber.png">
+            <img src="{% static 'image/phonenumber.png">
             <div id="phoneNumber">
                 <h1>Call us: </h1>
                 <h1 id="Number">&nbsp;1800 9030</h1>
                 <button id="copybutton" onclick= "copyNumber(document.querySelector('#Number').innerText), 
-                copy()"><img src="icon/copy.png"></button>
+                copy()"><img src="{% static 'icon/copy.png"></button>
                 <p id="copied">Copied!</p>
             </div>
             <div class="location_container">
                 <div class="location">
-                    <img src="image/domino_logo.png">
+                    <img src="{% static 'image/domino_logo.png' %}">
                     <p>120D, Russian Federation Blvd corner 261 Sangkat Tek Laok I, Khan Toul Kok Phnom Penh, 12102</p>
-                    <a href="https://maps.app.goo.gl/p4fe9HZMcWqL2nQX9" target="_blank"><img class="map_pin" src="icon/map pin png.png"></a>
+                    <a href="https://maps.app.goo.gl/p4fe9HZMcWqL2nQX9" target="_blank"><img class="map_pin" src="{% static 'icon/map pin png.png' %}"></a>
                 </div>
                 <div class="location">
-                    <img src="image/domino_logo.png">
+                    <img src="{% static 'image/domino_logo.png' %}">
                     <p>Charles de Gaulle Blvd (217) Sangkat Vealvong, Penh 12253</p>
-                    <a href="https://maps.app.goo.gl/1cT21GASyjLSFV829" target="_blank"><img class="map_pin" src="icon/map pin png.png"></a>
+                    <a href="https://maps.app.goo.gl/1cT21GASyjLSFV829" target="_blank"><img class="map_pin" src="{% static 'icon/map pin png.png' %}"></a>
                 </div>
                 <div class="location">
-                    <img src="image/domino_logo.png">
+                    <img src="{% static 'image/domino_logo.png' %}">
                     <p>HW3G+MJR, Rue Pasteur No. 51, Phnom Penh</p>
-                    <a href="https://maps.app.goo.gl/5aaqQRbC6iV2ch5b8" target="_blank"><img class="map_pin" src="icon/map pin png.png"></a>
+                    <a href="https://maps.app.goo.gl/5aaqQRbC6iV2ch5b8" target="_blank"><img class="map_pin" src="{% static 'icon/map pin png.png' %}"></a>
                 </div>
                 <div class="location">
-                    <img src="image/domino_logo.png">
+                    <img src="{% static 'image/domino_logo.png' %}">
                     <p>Street 516 &, St 315, Phnom Penh</p>
-                    <a href="https://maps.app.goo.gl/qs5d8VM5Amg2Rr5V9" target="_blank"><img class="map_pin" src="icon/map pin png.png"></a>
+                    <a href="https://maps.app.goo.gl/qs5d8VM5Amg2Rr5V9" target="_blank"><img class="map_pin" src="{% static 'icon/map pin png.png' %}"></a>
                 </div>
                 <div class="location">
-                    <img src="image/domino_logo.png">
+                    <img src="{% static 'image/domino_logo.png' %}">
                     <p>15C Street 1986, Phnom Penh</p>
-                    <a href="https://maps.app.goo.gl/wWqZVn95GdHkRhDu8" target="_blank"><img class="map_pin" src="icon/map pin png.png"></a>
+                    <a href="https://maps.app.goo.gl/wWqZVn95GdHkRhDu8" target="_blank"><img class="map_pin" src="{% static 'icon/map pin png.png' %}"></a>
                 </div>
             </div>
     </div>
@@ -71,10 +72,10 @@
                 <div class="footer_left">
                     <p>Our Social media:</p>
                     <ul>
-                        <li><a href="https://www.facebook.com/DominosPizzaCambodia/" target="_blank"><img src="icon/facebook.png"></a></li> 
-                        <li><a href="https://www.instagram.com/dominos/?hl=en" target="_blank"><img src="icon/instagram.png"></a></li>
-                        <li><a href="https://www.tiktok.com/@dominos.pizza.cam?is_from_webapp=1&sender_device=pc" target="_blank"><img src="icon/tiktok.png"></a></li>
-                        <li><a href="https://www.youtube.com/@dominos" target="_blank"><img src="icon/youtube.png"></a></li>
+                        <li><a href="https://www.facebook.com/DominosPizzaCambodia/" target="_blank"><img src="{% static 'icon/facebook.png' %}"></a></li>
+                        <li><a href="https://www.instagram.com/dominos/?hl=en" target="_blank"><img src="{% static 'icon/instagram.png' %}"></a></li>
+                        <li><a href="https://www.tiktok.com/@dominos.pizza.cam?is_from_webapp=1&sender_device=pc" target="_blank"><img src="{% static 'icon/tiktok.png' %}"></a></li>
+                        <li><a href="https://www.youtube.com/@dominos" target="_blank"><img src="{% static 'icon/youtube.png' %}"></a></li>
                     </ul>
                 </div>
             </td>
