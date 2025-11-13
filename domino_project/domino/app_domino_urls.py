@@ -1,8 +1,12 @@
 from django.urls import path
-from domino import views
+from . import views
+
 
 urlpatterns = [
-    path("",views.home, name="/"),
+    path("", views.home, name="/"),
+    path("contacts/", views.contact_menu, name="contacts"),
+    path("menu/", views.menu_menu, name="menu"),
+    path("carts/", views.cart_menu, name="carts"),
 ]
 
 
