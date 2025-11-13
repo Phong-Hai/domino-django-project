@@ -7,7 +7,7 @@
     <title>Menu</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
-    <script src="{% static 'js/template.js' %}" defer></script>
+    <script src="{% static 'js/cart.js' %}" defer></script>
     <script src="{% static 'js/menu.js' %}" defer></script>
 </head>
 <body style="margin: 0;">
@@ -26,8 +26,8 @@
         <div class="container_menu_right">
             <ul>
                 <li><p id="numberItemInCart">0</p></li>
-                <li><a href="cart.html"><img src="{% static 'icon/cart.png' %}" width="25" height="25"></a></li>
-                <li><a href="account.html"><img src="{% static 'icon/user.png' %}" width="23" height="23"></a></li>
+                <li><a href="{% url 'carts' %}"><img src="{% static 'icon/cart.png' %}" width="25" height="25"></a></li>
+                <li><a href="{% url 'login' %}"><img src="{% static 'icon/user.png' %}" width="23" height="23"></a></li>
             </ul>
         </div>
     </div>
@@ -50,10 +50,11 @@
                     <div class="info_bar">
                         <p><b>{{ product.product_name }}</b><br>${{ product.price }}</p>
                         <button
-                                class="add-to-cart"
-                                data-id="{{ product.id }}"
-                                data-name="{{ product.product_name }}"
-                                data-price="{{ product.price }}">
+                            class="add-to-cart"
+                            data-id="{{ product.id }}"
+                            data-name="{{ product.product_name }}"
+                            data-price="{{ product.price }}"
+                            data-image="{% if product.image %}{% static product.image %}{% else %}{% static 'images/no-image.png' %}{% endif %}">
                             Add to Cart
                         </button>
                     </div>

@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views, app_views
-from .app_views import auth_views, product_views, admin_views, category_views, user_views, menu_views
+from .app_views import auth_views, product_views, admin_views, category_views, user_views, menu_views, cart_views
 
 
 urlpatterns = [
@@ -40,6 +40,10 @@ urlpatterns = [
     path('manager/categories/delete/<int:id>/', category_views.delete, name='category_delete'),
     path('manager/categories/edit/<int:id>/', category_views.edit, name='category_edit'),
     path('manager/categories/update/<int:id>/', category_views.update, name='category_update'),
+
+    # Invoice
+    path('invoice/', cart_views.process_checkout, name='process_checkout'),
+    path('create-invoice/', cart_views.create_invoice, name='create_invoice'),
 
 ]
 

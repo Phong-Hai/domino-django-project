@@ -403,5 +403,39 @@
       "created_at": "2025-11-10T17:26:00+07:00",
       "updated_at": "2025-11-10T17:26:00+07:00"
     }
+  },
+  {
+    "model": "domino.Product",
+    "pk": 27,
+    "fields": {
+      "product_name": "Pepsi Cola",
+      "price": 0.99,
+      "description": "Classic cola, 500ml bottle.",
+      "image": "image/drink/pepsi.png",
+      "category": 6,
+      "created_at": "2025-11-10T17:26:00+07:00",
+      "updated_at": "2025-11-10T17:26:00+07:00"
+    }
+  },
+  {
+    "model": "domino.User",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "password": "pbkdf2_sha256$600000$...",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@domino.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "role": "admin",
+      "gender": "male",
+      "phone": "",
+      "address": "",
+      "preferred_store": "",
+      "image": "image/drink/pepsi.png",
+      "created_at": "2025-01-01T00:00:00Z"
+    }
   }
 ]

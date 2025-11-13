@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-
+from .. forms import UserForm
 
 def home(request):
     return render(request, "pages/index.html")
@@ -77,4 +77,5 @@ def change_password(request):
             return redirect('account:profile_settings')
     else:
         return redirect('account:profile_settings')
+
 
