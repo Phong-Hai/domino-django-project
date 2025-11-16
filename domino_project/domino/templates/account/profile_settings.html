@@ -1,13 +1,14 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>Profile Settings — Domino Pizza</title>
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <script defer src="{% static 'js/profile.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="{% static 'js/cart.js' %}" defer></script>
 </head>
 <body>
 
@@ -69,6 +70,7 @@
                 {% else %}
                 <img id="preview" src="{% static 'image/default-avatar.png' %}" alt="Profile" class="avatar">
                 {% endif %}
+                {{ form.image }}
                 <label for="id_image" class="avatar-label">Change</label>
                 <br/> <br/>
             </div>

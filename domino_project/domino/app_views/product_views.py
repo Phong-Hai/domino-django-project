@@ -51,7 +51,7 @@ def create(request):
             category = Category.objects.get(id=category_id)
 
             Product.objects.create(
-                name=request.POST.get('name'),
+                product_name=request.POST.get('product_name'),
                 description=request.POST.get('description'),
                 price=request.POST.get('price'),
                 category=category,
@@ -74,7 +74,7 @@ def update(request, id):
             category_id = request.POST['category']
             category = Category.objects.get(id=category_id)
 
-            product_exist.name = request.POST['name']
+            product_exist.product_name = request.POST['product_name']
             product_exist.description = request.POST['description']
             product_exist.price = request.POST['price']
             product_exist.category = category

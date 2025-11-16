@@ -90,25 +90,32 @@ function displayCartItems() {
     `;
 
     cart.forEach(item => {
-        html += `
-            <div class="cart-item" style="display:flex; align-items:center; gap:20px; padding:15px; border-bottom:1px solid #eee;">
-                ${item.image ? `<img src="${item.image}" alt="${item.name}" style="width:80px; height:80px; object-fit:cover; border-radius:8px;">` : ''}
-                <div class="item-info" style="flex-grow: 1;">
-                    <h3>${item.name}</h3>
-                    <p class="item-price">$${item.price.toFixed(2)} each</p>
-                    <div class="item-controls">
-                        <button class="quantity-btn minus" onclick="updateQuantity('${item.id}', -1)">-</button>
-                        <span class="quantity">${item.quantity}</span>
-                        <button class="quantity-btn plus" onclick="updateQuantity('${item.id}', 1)">+</button>
-                        <button class="remove-btn" onclick="removeFromCart('${item.id}')">Remove</button>
-                    </div>
-                </div>
-                <div class="item-total">
-                    $${(item.price * item.quantity).toFixed(2)}
+    // Fix image path if it's relative
+    let imagePath = item.image;
+    if (imagePath && !imagePath.startsWith('http') && !imagePath.startsWith('/')) {
+        // If it's a relative path like "image/side_dishes/nugget.png"
+        imagePath = `/static/${imagePath}`;
+    }
+
+    html += `
+        <div class="cart-item" style="display:flex; align-items:center; gap:20px; padding:15px; border-bottom:1px solid #eee;">
+            ${imagePath ? `<img src="${imagePath}" alt="${item.name}" style="width:80px; height:80px; object-fit:cover; border-radius:8px;">` : ''}
+            <div class="item-info" style="flex-grow: 1;">
+                <h3>${item.name}</h3>
+                <p class="item-price">$${item.price.toFixed(2)} each</p>
+                <div class="item-controls">
+                    <button class="quantity-btn minus" onclick="updateQuantity('${item.id}', -1)">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn plus" onclick="updateQuantity('${item.id}', 1)">+</button>
+                    <button class="remove-btn" onclick="removeFromCart('${item.id}')">Remove</button>
                 </div>
             </div>
-        `;
-    });
+            <div class="item-total">
+                $${(item.price * item.quantity).toFixed(2)}
+            </div>
+        </div>
+    `;
+});
 
     html += `
             </div>

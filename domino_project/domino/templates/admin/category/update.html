@@ -12,7 +12,7 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label>Category Name:</label>
-                    <input type="text" class="form-control" name="name" value="{{ category.name }}">
+                    <input type="text" class="form-control" name="category_name" value="{{ category.category_name }}">
                 </div>
                 <a href="/manager/categories/" class="btn btn-danger" role="button">
                     <span class="glyphicon glyphicon-chevron-left"></span> Back

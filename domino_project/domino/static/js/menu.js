@@ -36,13 +36,14 @@
         const id    = btn.dataset.id;
         const name  = btn.dataset.name;
         const price = parseFloat(btn.dataset.price);
+        const image = button.dataset.image || '';
 
         // find item in cart
         const existing = cart.find(item => item.id === id);
         if (existing) {
           existing.quantity += 1;
         } else {
-          cart.push({ id, name, price, quantity: 1 });
+          cart.push({ id, name, price, image});
         }
 
         saveCart();

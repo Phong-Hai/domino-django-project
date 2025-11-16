@@ -10,14 +10,14 @@ def index(request):
         search_item = request.POST['search_item']
         categories = Category.objects.filter(name__contains=search_item)
         count_item = categories.count()
-        paginator = Paginator(categories, 5)
+        paginator = Paginator(categories, 20)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
         data = {"categories": page_obj, "count_item": count_item, "title": "Category List"}
     else:
         categories = Category.objects.all().order_by('id')
         count_item = categories.count()
-        paginator = Paginator(categories, 5)
+        paginator = Paginator(categories, 20)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
         data = {"categories": page_obj, "count_item": count_item, "title": "Category List"}
@@ -34,7 +34,7 @@ def create(request):
     try:
         if request.method == 'POST':
             Category.objects.create(
-                name=request.POST.get('name')
+                category_name=request.POST.get('category_name')
             )
             messages.success(request, 'Category added successfully!')
             return redirect('/manager/categories/')
@@ -59,7 +59,7 @@ def edit(request, id):
 def update(request, id):
     if request.method == 'POST':
         category_exist = Category.objects.get(pk=id)
-        category_exist.name = request.POST['name']
+        category_exist.category_name = request.POST['category_name']
         category_exist.full_clean()
         category_exist.save()
         messages.success(request, 'Category updated successfully!')

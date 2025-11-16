@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/menu.css' %}">
     <script src="{% static 'js/cart.js' %}" defer></script>
-    <script src="{% static 'js/menu.js' %}" defer></script>
 </head>
 <body style="margin: 0;">
 <div id="preloader"></div>
@@ -42,7 +41,13 @@
                 {% for product in category.products.all %}
                 <div class="menu">
                     {% if product.image %}
-                        <img src="{% static product.image %}" alt="{{ product.product_name }}">
+                        {% if 'products/' in product.image.url %}
+                            <!-- MEDIA -->
+                            <img src="{{ product.image.url }}" alt="{{ product.product_name }}">
+                        {% else %}
+                            <!-- STATIC -->
+                            <img src="{% static product.image %}" alt="{{ product.product_name }}">
+                        {% endif %}
                     {% else %}
                         <img src="{% static 'images/no-image.png' %}" alt="No image">
                     {% endif %}
@@ -54,8 +59,8 @@
                             data-id="{{ product.id }}"
                             data-name="{{ product.product_name }}"
                             data-price="{{ product.price }}"
-                            data-image="{% if product.image %}{% static product.image %}{% else %}{% static 'images/no-image.png' %}{% endif %}">
-                            Add to Cart
+data-image="{% if product.image %}{% if 'products/' in product.image.url %}{{ request.scheme }}://{{ request.get_host }}{{ product.image.url }}{% else %}{{ request.scheme }}://{{ request.get_host }}{% static product.image %}{% endif %}{% else %}{{ request.scheme }}://{{ request.get_host }}{% static 'images/no-image.png' %}{% endif %}"
+>                            Add to Cart
                         </button>
                     </div>
                 </div>

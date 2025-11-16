@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 </head>
-<body style="margin: 0px 0px 0px 0px;">
+<body style="margin: 0px 0px 0px 0px;" data-user-authenticated="{{ user.is_authenticated|yesno:'true,false' }}">
     <div class="menu">
         <div class="container_menu">
             <div class="container_menu_left">
